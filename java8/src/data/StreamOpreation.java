@@ -78,19 +78,19 @@ public class StreamOpreation {
 	     List<String> people = Arrays.asList("Aman","Ankita","Kushala","Sunita","Saritaa","amanda","hansika","Shiva","Satya");
 	     people
 	     .stream()
-         .map(String::toUpperCase)
-         .filter(x -> x.startsWith("A"))
+         .map(String::toLowerCase)
+         .filter(x -> x.startsWith("a"))
          .forEach(System.out::println);	    		 
 	     
 	     
-	    //8. Stream rows from text file,sort,filter,and print
+	     //8. Stream rows from text file,sort,filter,and print
 	     
-	    // Stream<String> bands = Files.lines(Paths.get("bands.txt"));
-	    // bands
-	    // .sorted().
-	    // filter(x -> x.length() > 13).
-	    // forEach(System.out::println);
-	    // bands.close();
+	     Stream<String> bands = Files.lines(Paths.get("bands.txt"));
+	     bands
+	     .sorted().
+	     filter(x -> x.length() > 13).
+	     forEach(System.out::println);
+	     bands.close();
 	     
 	     //9.Reduction - sum
 	     double total = Stream.of(7.3,1.5,4.8)
